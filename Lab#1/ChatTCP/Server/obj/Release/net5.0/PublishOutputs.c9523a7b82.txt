@@ -1,0 +1,5 @@
+C:\Users\barga\Desktop\PR lab 1\lab1\Server\bin\Release\net5.0\publish\Server.exe
+C:\Users\barga\Desktop\PR lab 1\lab1\Server\bin\Release\net5.0\publish\Server.dll
+C:\Users\barga\Desktop\PR lab 1\lab1\Server\bin\Release\net5.0\publish\Server.deps.json
+C:\Users\barga\Desktop\PR lab 1\lab1\Server\bin\Release\net5.0\publish\Server.runtimeconfig.json
+C:\Users\barga\Desktop\PR lab 1\lab1\Server\bin\Release\net5.0\publish\Server.pdb

@@ -1,0 +1,16 @@
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.exe
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.deps.json
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.runtimeconfig.json
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.runtimeconfig.dev.json
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.dll
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\Client.pdb
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.csproj.AssemblyReference.cache
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.AssemblyInfoInputs.cache
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.AssemblyInfo.cs
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.csproj.CoreCompileInputs.cache
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.dll
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\refint\Client.dll
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.pdb
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\Client.genruntimeconfig.cache
+C:\Users\barga\Desktop\PR lab 1\lab1\Client\obj\Release\net5.0\ref\Client.dll
