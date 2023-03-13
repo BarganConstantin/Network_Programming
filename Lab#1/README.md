@@ -4,7 +4,7 @@ A simple chat application built with C# and Socket programming. 🔌
 
 ## Description 📝
 
-This application allows users to connect to a server and communicate with each other. The server can handle multiple clients and broadcast their messages to all other clients. Each client can choose a username to identify themselves in the chat.
+&ensp; &ensp; This application allows users to connect to a server and communicate with each other. The server can handle multiple clients and broadcast their messages to all other clients. Each client can choose a username to identify themselves in the chat.
 
 ## Features 🌟
 
@@ -25,7 +25,7 @@ The Simple Chat Application will have the following features:
 
 ## Usage 📖
 
-Once you have started the server and one or more clients, you can begin communicating with each other. Simply type your message in the client console and press enter. Your message will be broadcast to all other connected clients.
+&ensp; &ensp; Once you have started the server and one or more clients, you can begin communicating with each other. Simply type your message in the client console and press enter. Your message will be broadcast to all other connected clients.
 
 ## Conclusion 🎓
 
