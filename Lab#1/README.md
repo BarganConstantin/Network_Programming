@@ -1,6 +1,6 @@
 # Lab 1: Chat Application using TCP 💬
 
-A simple chat application built with C# and Socket programming. 🔌
+&ensp; &ensp; A simple chat application built with C# and Socket programming. 🔌
 
 ## Description 📝
 
