@@ -1,5 +1,0 @@
-C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\publish\Client.exe
-C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\publish\Client.dll
-C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\publish\Client.deps.json
-C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\publish\Client.runtimeconfig.json
-C:\Users\barga\Desktop\PR lab 1\lab1\Client\bin\Release\net5.0\publish\Client.pdb
