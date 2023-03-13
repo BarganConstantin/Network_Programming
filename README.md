@@ -24,6 +24,14 @@ In this lab, I built a simple chat application using TCP protocol. The lab inclu
 
 [To be updated after completion of Lab 4]
 
+## Lab 5: [To be updated]🔄
+
+[To be updated after completion of Lab 4]
+
+## Lab 6: [To be updated]🔄
+
+[To be updated after completion of Lab 4]
+
 ## Getting Started 🚀
 
 To run the code in this repository, you will need Visual Studio or another C# development environment installed on your machine. Clone the repository and open the solution file in your IDE.
