@@ -29,8 +29,8 @@ Once you have started the server and one or more clients, you can begin communic
 
 ## Conclusion 🎓
 
-In conclusion, this lab was a great opportunity to learn and practice socket programming in C#. The Simple Chat Application we built allows multiple users to connect and communicate in real-time. Through this project, we gained valuable experience in creating a server-client architecture, handling connections, and sending/receiving messages over a network using TCP.
+&ensp; &ensp; This lab was a great opportunity to learn and practice socket programming in C#. The Simple Chat Application we built allows multiple users to connect and communicate in real-time. Through this project, we gained valuable experience in creating a server-client architecture, handling connections, and sending/receiving messages over a network using TCP.
 
-TCP (Transmission Control Protocol) is a crucial protocol for reliable data transfer over the internet. Understanding TCP and socket programming is essential for developing network applications that can handle multiple connections and communicate efficiently.
+&ensp; &ensp; TCP (Transmission Control Protocol) is a crucial protocol for reliable data transfer over the internet. Understanding TCP and socket programming is essential for developing network applications that can handle multiple connections and communicate efficiently.
 
-Overall, this lab provided us with practical skills and experience in building network applications using socket programming in C#. We hope that this project will be useful for others who are interested in learning more about network programming! 😊
+&ensp; &ensp; Overall, this lab provided us with practical skills and experience in building network applications using socket programming in C#. We hope that this project will be useful for others who are interested in learning more about network programming! 😊
