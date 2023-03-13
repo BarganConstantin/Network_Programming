@@ -53,6 +53,10 @@ namespace Client
                     {
                         ConsoleUtils.PrintWarning("Exception occurred: " + ex.Message);
                     }
+                    finally
+                    {
+                        Close(); // close the socket in the finally block to ensure it's always closed properly
+                    }
                 }
             });
             reader.Start();
@@ -73,6 +77,10 @@ namespace Client
                 catch (Exception ex)
                 {
                     ConsoleUtils.PrintWarning("Error sending data to server: " + ex.Message);
+                }
+                finally
+                {
+                    Close(); // close the socket in the finally block to ensure it's always closed properly
                 }
             }
         }
