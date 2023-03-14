@@ -27,40 +27,13 @@ namespace Client
             Console.Write("username: ");
             var userName = Console.ReadLine();
 
-            Thread reader = new Thread(() =>
-            {
-                while (true)
-                {
-                    try
-                    {
-                        var data = readFromServer();
-                        ConsoleUtils.PrintResponse(data);
-                    }
-                    catch (SocketException e)
-                    {
-                        if (e.ErrorCode == 10054) // Error code for 'An existing connection was forcibly closed by the remote host'
-                        {
-                            ConsoleUtils.PrintWarning("The server closed the connection.");
-                            Thread.Sleep(3000);
-                            Environment.Exit(0);
-                        }
-                        else
-                        {
-                            ConsoleUtils.PrintWarning("Socket exception occurred: " + e.Message);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        ConsoleUtils.PrintWarning("Exception occurred: " + ex.Message);
-                    }
-                    finally
-                    {
-                        Close(); // close the socket in the finally block to ensure it's always closed properly
-                    }
-                }
-            });
-            reader.Start();
+            startReadingFromServer();
+            startSendingToServer(userName);
 
+        }
+
+        private void startSendingToServer(string userName)
+        {
             while (true)
             {
                 var message = Console.ReadLine() ?? "";
@@ -78,11 +51,40 @@ namespace Client
                 {
                     ConsoleUtils.PrintWarning("Error sending data to server: " + ex.Message);
                 }
-                finally
-                {
-                    Close(); // close the socket in the finally block to ensure it's always closed properly
-                }
             }
+        }
+
+        private void startReadingFromServer()
+        {
+            Thread reader = new Thread(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var data = readFromServer();
+                        ConsoleUtils.PrintResponse(data);
+                    }
+                    catch (SocketException e)
+                    {
+                        if (e.SocketErrorCode == SocketError.ConnectionReset) // Error code for 'An existing connection was forcibly closed by the remote host'
+                        {
+                            ConsoleUtils.PrintWarning("The server closed the connection.");
+                            Thread.Sleep(3000);
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            ConsoleUtils.PrintWarning("Socket exception occurred: " + e.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        ConsoleUtils.PrintWarning("Exception occurred: " + ex.Message);
+                    }
+                }
+            });
+            reader.Start();
         }
 
         private void connectToServer(IPEndPoint tcpEndPoint)

@@ -63,7 +63,7 @@ namespace Server
             }
             catch (SocketException ex)
             {
-                if (ex.SocketErrorCode == SocketError.ConnectionReset || ex.ErrorCode == 10053)
+                if (ex.SocketErrorCode == SocketError.ConnectionReset || ex.SocketErrorCode == SocketError.ConnectionAborted)
                 {
                     //Console.WriteLine("The connection was forcibly closed by the remote host: " + _client.RemoteEndPoint.ToString());
                     ConsoleUtils.PrintWarning("# " + _client.RemoteEndPoint.ToString() + " disconected from server" + " [online: " + (_clients.Count - 1) + "]");
