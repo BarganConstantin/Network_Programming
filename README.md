@@ -12,7 +12,15 @@ In this lab, I built a simple chat application using TCP protocol. The lab inclu
 - The server application will display this message in its window and rebroadcast it to all connected clients (including the one that sent the original message) 📩
 - Customers will be able to send as many messages as they want 🔄
 
-## Lab 2: [To be updated] 🔄
+## Lab 2: Chat Application using TCP [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%232)
+
+In this lab, I built a simple chat application using UDP protocol. The lab included the following requirements:
+
+- Creation of a console application that can act as both a client and a server 💻
+- Multiple users can connect to the chat application simultaneously 👥
+- Users can send and receive messages in real-time ⏰
+- Each user runs an application of type client-server at the same time to handle incoming messages 🔗
+- Users can communicate through broadcast or send individual messages in private 🔒
 
 [To be updated after completion of Lab 2]
 
