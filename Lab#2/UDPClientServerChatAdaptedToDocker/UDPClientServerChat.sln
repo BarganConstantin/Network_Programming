@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{6E056D79-4167-4E42-97C2-F7918B146504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPClientServerChat", "UDPClientServerChat\UDPClientServerChat.csproj", "{AC537AD9-9613-4968-B867-76A704A43652}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E056D79-4167-4E42-97C2-F7918B146504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E056D79-4167-4E42-97C2-F7918B146504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E056D79-4167-4E42-97C2-F7918B146504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E056D79-4167-4E42-97C2-F7918B146504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC537AD9-9613-4968-B867-76A704A43652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC537AD9-9613-4968-B867-76A704A43652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC537AD9-9613-4968-B867-76A704A43652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC537AD9-9613-4968-B867-76A704A43652}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A27B21C-1FA2-42AF-840E-F87BF461FC8F}
+	EndGlobalSection
+EndGlobal
