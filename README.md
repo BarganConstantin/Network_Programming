@@ -19,7 +19,7 @@ In this lab, I built a simple chat application using UDP protocol. The lab inclu
 - Creation of a console application that can act as both a client and a server 💻
 - Multiple users can connect to the chat application simultaneously 👥
 - Users can send and receive messages in real-time ⏰
-- Each user runs an application of type client-server at the same time to handle incoming messages 🔗
+- Each user runs an application of type client-server at the same time to handle incoming messages 📱
 - Users can communicate through broadcast or send individual messages in private 🔒
 
 [To be updated after completion of Lab 2]
