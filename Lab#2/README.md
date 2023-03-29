@@ -1,4 +1,4 @@
-# Lab 1: Chat Application using TCP 💬
+# Lab 1: Chat Application using UDP 💬
 
 A simple chat application built with C# and Socket programming. 🔌
 
