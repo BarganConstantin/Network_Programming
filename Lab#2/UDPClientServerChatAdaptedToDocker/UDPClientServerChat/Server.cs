@@ -25,15 +25,17 @@ namespace UDPClientServerChat
             try
             {
                 IP = IPAddresses.GetLocalIPAddress();
-                //IP = "192.168.1.6";
-                //BroadcastAddress = IPAddresses.GetBroadcastAddress(IP);
-                BroadcastAddress = "172.20.0.255";
+
+                BroadcastAddress = IPAddresses.GetBroadcastAddress(IP);
+                Console.WriteLine($"broadcast: {BroadcastAddress}");
+                //BroadcastAddress = "172.20.0.255";
                 Port = 3000;
 
-                //var tcpEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
-                var tcpEndPoint = new IPEndPoint(IPAddress.Any, Port);
+                var tcpEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
+                //var tcpEndPoint = new IPEndPoint(IPAddress.Any, Port);
                 UdpServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                UdpServerSocket.EnableBroadcast = true;
+                //UdpServerSocket.EnableBroadcast = true;
+                UdpServerSocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
 
                 BindServer(tcpEndPoint);
 

@@ -28,11 +28,11 @@ namespace UDPClientServerChat
                 BroadcastAddress = IPAddresses.GetBroadcastAddress(IP);
                 Port = 3000;
 
-                var tcpEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
+                var udpEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
                 UdpServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
                 UdpServerSocket.EnableBroadcast = true;
 
-                BindServer(tcpEndPoint);
+                BindServer(udpEndPoint);
 
                 _messageProcessing = new MessageProcessing(this);
 
