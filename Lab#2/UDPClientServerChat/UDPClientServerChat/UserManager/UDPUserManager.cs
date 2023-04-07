@@ -7,24 +7,13 @@ using System.Threading.Tasks;
 
 namespace UDPClientServerChat.UserManager
 {
-    public class UDPUserManager
+    public static class UDPUserManager
     {
-        private static List<UDPUser> _udpUsersList;
-        private static readonly object _lockpad = new object();
+        private static List<UDPUser> _udpUsersList = new List<UDPUser>();
         private static int _nextId = 1;
 
         public static List<UDPUser> GetUsersList()
         {
-            if (_udpUsersList == null)
-            {
-                lock (_lockpad)
-                {
-                    if (_udpUsersList == null)
-                    {
-                        _udpUsersList = new List<UDPUser>();
-                    }
-                }
-            }
             return _udpUsersList;
         }
 
@@ -37,7 +26,7 @@ namespace UDPClientServerChat.UserManager
 
         public static void RemoveUserFromList(UDPUser user)
         {
-            _udpUsersList?.Remove(user);
+            _udpUsersList.Remove(user);
         }
 
         public static string GetUserNameByIP(string ip)

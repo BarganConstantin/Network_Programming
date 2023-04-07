@@ -26,6 +26,7 @@ namespace UDPClientServerChat
             {
                 IP = IPAddresses.GetLocalIPAddress();
                 BroadcastAddress = IPAddresses.GetBroadcastAddress(IP);
+                
                 Port = 3000;
 
                 var udpEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
