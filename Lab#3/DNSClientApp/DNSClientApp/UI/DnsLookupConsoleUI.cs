@@ -102,9 +102,9 @@ namespace DNSClientApp.UI
             ConsoleUtils.PrintWithColour("Enter an IP of new DNS server: ", ConsoleColor.White);
             var newServerIP = Console.ReadLine();
 
-            _dnsLookupUtility.SetDnsServer(newServerIP);
+            var result = _dnsLookupUtility.SetDnsServer(newServerIP);
 
-            ConsoleUtils.PrintWithColour("DNS server address was updated", ConsoleColor.Green);
+            ConsoleUtils.PrintWithColour(result, ConsoleColor.Green);
             
             Console.ReadKey();
             Console.Clear();

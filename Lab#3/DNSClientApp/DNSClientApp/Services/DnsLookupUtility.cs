@@ -3,6 +3,7 @@ using DNSClientApp.Singleton;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Sockets;
 
 namespace DNSClientApp.Services
 {
@@ -21,7 +22,7 @@ namespace DNSClientApp.Services
         {
             if (string.IsNullOrEmpty(ipAddress))
             {
-                throw new ArgumentException("IP address cannot be null or empty.", nameof(ipAddress));
+                return "IP address cannot be null or empty.";
             }
 
             IDnsQueryResponse result;
@@ -29,10 +30,9 @@ namespace DNSClientApp.Services
             {
                 result = _client.QueryReverse(IPAddress.Parse(ipAddress));
             }
-            catch (DnsResponseException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Failed to perform reverse DNS lookup for IP: {ipAddress}. {ex.Message}");
-                throw;
+                return $"Failed to perform reverse DNS lookup for IP: {ipAddress}. {ex.Message}";
             }
 
             return result.AuditTrail.ToString();
@@ -42,7 +42,7 @@ namespace DNSClientApp.Services
         {
             if (string.IsNullOrEmpty(domain))
             {
-                throw new ArgumentException("Domain name cannot be null or empty.", nameof(domain));
+                return "Domain name cannot be null or empty.";
             }
 
             IDnsQueryResponse result;
@@ -50,18 +50,24 @@ namespace DNSClientApp.Services
             {
                 result = _client.Query(domain, QueryType.ANY);
             }
-            catch (DnsResponseException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Failed to perform DNS lookup for domain: {domain}. {ex.Message}");
-                throw;
+                return $"Failed to perform DNS lookup for domain: {domain}. {ex.Message}";
             }
 
             return result.AuditTrail.ToString();
         }
-        public void SetDnsServer(string newServerIP)
+        public string SetDnsServer(string newServerIP)
         {
+            if (string.IsNullOrEmpty(newServerIP))
+            {
+                return "IP address cannot be null or empty.";
+            }
+
             SingletonLookupClient.updateDnsServer(newServerIP);
             _client = SingletonLookupClient.GetInstance();
+
+            return "DNS server address was updated";
         }
 
         public IReadOnlyCollection<NameServer> GetDnsServerAddress()
