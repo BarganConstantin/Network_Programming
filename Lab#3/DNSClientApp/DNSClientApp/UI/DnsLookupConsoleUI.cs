@@ -2,23 +2,34 @@
 using DNSClientApp.Singleton;
 using Helpers;
 using System;
+using System.Collections.Generic;
 
 namespace DNSClientApp.UI
 {
     public class DnsLookupConsoleUI
     {
         private DnsLookupUtility _dnsLookupUtility;
+        private readonly Dictionary<string, Action> _actionMap;
 
         public DnsLookupConsoleUI()
         {
-            _dnsLookupUtility = new DnsLookupUtility();
+            _dnsLookupUtility = new DnsLookupUtility(SingletonLookupClient.GetInstance());
+            
+            _actionMap = new Dictionary<string, Action>()
+            {
+                { "1", resolveDomainUI },
+                { "2", resolveIpUI },
+                { "3", changeDnsUI },
+                { "0", closeApplicationUI },
+            };
+
         }
 
         public void Run()
         {
             while (true)
             {
-                printDnsServerInfo();
+                printDnsServerIP();
 
                 ConsoleUtils.PrintWithColour(" 1 -> resolve <domain>", ConsoleColor.Blue);
                 ConsoleUtils.PrintWithColour("\n 2 -> resolve <ip>    ", ConsoleColor.Blue);
@@ -28,28 +39,23 @@ namespace DNSClientApp.UI
                 ConsoleUtils.PrintWithColour("\n\nSelect Option: ", ConsoleColor.White);
                 string option = Console.ReadLine();
                 
-                switch (option)
-                {
-                    case "1":
-                        resolveDomainUI();
-                        break;
-                    case "2":
-                        resolveIpUI();
-                        break;
-                    case "3":
-                        changeDnsUI();
-                        break;
-                    case "0":
-                        closeApplicationUI();
-                        break;
-                    default:
-                        selectOptionErrorUI();
-                        break;
-                }
+                ExecuteActionMap(option);
             } 
         }
 
-        private void printDnsServerInfo()
+        private void ExecuteActionMap(string option)
+        {
+            if (_actionMap.ContainsKey(option))
+            {
+                _actionMap[option].Invoke();
+            }
+            else
+            {
+                selectOptionErrorUI();
+            }
+        }
+
+        private void printDnsServerIP()
         {
             ConsoleUtils.PrintWithColour("You use DNS: ", ConsoleColor.White, ConsoleColor.Green);
             var nameServers = _dnsLookupUtility.GetDnsServerAddress();
@@ -111,7 +117,7 @@ namespace DNSClientApp.UI
             Environment.Exit(0);
         }
 
-        public void selectOptionErrorUI()
+        private void selectOptionErrorUI()
         {
             ConsoleUtils.PrintWithColour("Error to select option !", ConsoleColor.Red);
             ConsoleUtils.PrintWithColour("\nTry Again !", ConsoleColor.Red);

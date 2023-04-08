@@ -1,9 +1,7 @@
 ﻿using DnsClient;
-using DnsClient.Protocol;
 using DNSClientApp.Singleton;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 
 namespace DNSClientApp.Services
@@ -12,9 +10,9 @@ namespace DNSClientApp.Services
     {
         private ILookupClient _client;
 
-        public DnsLookupUtility()
+        public DnsLookupUtility(ILookupClient client)
         {
-            _client = SingletonLookupClient.GetInstance();
+            _client = client;
             _client.EnableAuditTrail = true;
             _client.UseCache = true;
         }
