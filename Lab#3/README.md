@@ -1,4 +1,4 @@
-# Lab 3: DNS Client Application 🌐
+# Lab 3: DNS Client Application 🔍
 
 A DNS client application built with C# using the DNSClient library for resolving domain names and IP addresses. 📡
 
