@@ -64,9 +64,13 @@ namespace DNSClientApp.Services
                 return "IP address cannot be null or empty.";
             }
 
-            SingletonLookupClient.updateDnsServer(newServerIP);
-            _client = SingletonLookupClient.GetInstance();
+            var updateStatus = SingletonLookupClient.updateDnsServer(newServerIP);
+            if (updateStatus == false) 
+            {
+                return "Choose another DNS Server";
+            }
 
+            _client = SingletonLookupClient.GetInstance();
             return "DNS server address was updated";
         }
 
