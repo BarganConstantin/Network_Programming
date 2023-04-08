@@ -4,7 +4,13 @@ A DNS client application built with C# using the DNSClient library for resolving
 
 ## Description 📝
 
-This console application allows users to resolve domain names to IP addresses or vice versa using the [DNSClient.NET](https://github.com/MichaCo/DnsClient.NET) library in C#. The DNS server indicated by the system will be used by default, but the user can also specify a different DNS server to be used for the commands. The application provides three main commands:
+This console application allows users to resolve domain names to IP addresses or vice versa using the [DNSClient.NET](https://github.com/MichaCo/DnsClient.NET) library in C#. The DNS server indicated by the system will be used by default, but the user can also specify a different DNS server to be used for the commands.
+
+## Dependencies 📦
+
+The following dependencies are required for the DNS Client Application:
+
+- [DNSClient.NET](https://github.com/MichaCo/DnsClient.NET): A C# library for DNS resolution.
 
 ## Features 🌟
 
