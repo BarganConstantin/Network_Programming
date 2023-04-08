@@ -22,11 +22,13 @@ In this lab, I built a simple chat application using UDP protocol. The lab inclu
 - Each user runs an application of type client-server at the same time to handle incoming messages 📱
 - Users can communicate through broadcast or send individual messages in private 🔒
 
-[To be updated after completion of Lab 2]
+## Lab 3:  DNS Client Application [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%233)
 
-## Lab 3: [To be updated]🔄
+In this lab, I built a simple DNS client application using DNSClient.NET library in C#. The lab have the following feature:
 
-[To be updated after completion of Lab 3]
+- `resolve <domain>`: Displays the list of IP addresses assigned to the domain name 🌐
+- `resolve <ip>`: Displays the list of domain names assigned to the IP address 🔍
+- `set dns <ip>`: Changes the DNS server that will be used for the above commands to the specified IP address ⚙️
 
 ## Lab 4: [To be updated]🔄
 
