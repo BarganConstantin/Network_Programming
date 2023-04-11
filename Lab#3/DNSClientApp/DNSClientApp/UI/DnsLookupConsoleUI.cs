@@ -17,10 +17,10 @@ namespace DNSClientApp.UI
             
             _actionMap = new Dictionary<string, Action>()
             {
-                { "1", resolveDomainUI },
-                { "2", resolveIpUI },
-                { "3", changeDnsUI },
-                { "0", closeApplicationUI },
+                { "1", resolveDomainCommand },
+                { "2", resolveIpCommand },
+                { "3", changeDnsCommand },
+                { "0", closeApplicationCommand },
             };
 
         }
@@ -51,7 +51,7 @@ namespace DNSClientApp.UI
             }
             else
             {
-                selectOptionErrorUI();
+                selectOptionErrorCommand();
             }
         }
 
@@ -68,7 +68,7 @@ namespace DNSClientApp.UI
             Console.WriteLine("\n");
         }
 
-        private void resolveDomainUI()
+        private void resolveDomainCommand()
         {
             Console.Clear();
             ConsoleUtils.PrintWithColour("Enter domain name: ", ConsoleColor.White);
@@ -82,7 +82,7 @@ namespace DNSClientApp.UI
             Console.Clear();
         }
 
-        private void resolveIpUI()
+        private void resolveIpCommand()
         {
             Console.Clear();
             ConsoleUtils.PrintWithColour("Enter an IP address: ", ConsoleColor.White);
@@ -96,7 +96,7 @@ namespace DNSClientApp.UI
             Console.Clear();
         }
 
-        private void changeDnsUI()
+        private void changeDnsCommand()
         {
             Console.Clear();
             ConsoleUtils.PrintWithColour("Enter an IP of new DNS server: ", ConsoleColor.White);
@@ -110,14 +110,14 @@ namespace DNSClientApp.UI
             Console.Clear();
         }
 
-        private void closeApplicationUI()
+        private void closeApplicationCommand()
         {
             Console.Clear();
             ConsoleUtils.PrintWithColour("Closing DNS Application ...", ConsoleColor.Magenta);
             Environment.Exit(0);
         }
 
-        private void selectOptionErrorUI()
+        private void selectOptionErrorCommand()
         {
             ConsoleUtils.PrintWithColour("Error to select option !", ConsoleColor.Red);
             ConsoleUtils.PrintWithColour("\nTry Again !", ConsoleColor.Red);
