@@ -21,16 +21,15 @@ namespace HTTPClientApp.CommandFactoryMethod
             { "6", new CreateNewProductInCategory() },
             { "7", new PrintProductsInCategory() },
             { "0", new CloseHttpClientApp() },
-            { "-1", new PrintErrorCommand() },
         };
 
         public static ICommand GetCommand(string option)
         {
-            if (Int32.Parse(option) < _actionMap.Count)
+            if (_actionMap.ContainsKey(option))
             {
                 return _actionMap[option];
             }
-            return _actionMap["-1"];
+            return new PrintErrorCommand();
         }
     }
 }
