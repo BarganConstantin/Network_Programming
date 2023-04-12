@@ -13,5 +13,6 @@ namespace HTTPClientApp.Constants
         public static string GetCategoryListAddress = "/api/Category/categories";
         public static string PostCategoryListAddress = "/api/Category/categories";
         public static string DeleteCategoryListAddress = "/api/Category/categories/";
+        public static string PutCategoryListAddress = "/api/Category/categories/";
     }
 }

@@ -19,7 +19,7 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
 
             if (response.Status)
             {
-                ConsoleUtils.PrintWithColour($"Category with {categoryId} was deleted successfully!", ConsoleColor.DarkGreen);
+                ConsoleUtils.PrintWithColour($"Category with ID: {categoryId} was deleted successfully!", ConsoleColor.DarkGreen);
             }
             else
             {

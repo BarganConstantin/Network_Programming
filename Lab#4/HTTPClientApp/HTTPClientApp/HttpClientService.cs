@@ -36,7 +36,7 @@ namespace HTTPClientApp
             }
             else
             {
-                var msg = ("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase).ToString();
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
                 return new GetCategoriesResponse() { Status = false , StatusMsg = msg};
             }
         }
@@ -52,7 +52,7 @@ namespace HTTPClientApp
             }
             else
             {
-                var msg = ("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase).ToString();
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
                 return new PostCategoryResponse() { Status = false, StatusMsg = msg };
             }
         }
@@ -67,11 +67,26 @@ namespace HTTPClientApp
             }
             else
             {
-                var msg = ("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase).ToString();
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
                 return new DeleteCategoryResponse() { Status = false, StatusMsg = msg };
             }
         }
 
+        public static PutCategoryResponse PutCategory(int categoryId, string categoryName)
+        {
+            var newCategory = new NewCategory() { title = categoryName };
+            var response = _httpClient.PutAsJsonAsync(UrlAddresses.PutCategoryListAddress + categoryId, newCategory).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return new PutCategoryResponse() { Status = true };
+            }
+            else
+            {
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return new PutCategoryResponse() { Status = false, StatusMsg = msg };
+            }
+        }
         private static async Task<string> getResponseBodyAsync(HttpResponseMessage response)
         {
             string responseBody = await response.Content.ReadAsStringAsync();
