@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,23 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
     {
         public void Execute()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            ConsoleUtils.PrintWithColour("Enter id of category to delete it: ", ConsoleColor.DarkBlue);
+            var categoryId = Console.ReadLine();
+
+            var response = HttpClientService.DeleteCategory(Int32.Parse(categoryId));
+
+            if (response.Status)
+            {
+                ConsoleUtils.PrintWithColour($"Category with {categoryId} was deleted successfully!", ConsoleColor.DarkGreen);
+            }
+            else
+            {
+                ConsoleUtils.PrintWithColour(response.StatusMsg, ConsoleColor.DarkRed);
+            }
+
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }

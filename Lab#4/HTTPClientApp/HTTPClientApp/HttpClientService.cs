@@ -1,6 +1,6 @@
 ﻿using HTTPClientApp.Constants;
 using HTTPClientApp.Entities;
-using HTTPClientApp.ViewModels;
+using HTTPClientApp.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +54,21 @@ namespace HTTPClientApp
             {
                 var msg = ("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase).ToString();
                 return new PostCategoryResponse() { Status = false, StatusMsg = msg };
+            }
+        }
+
+        public static DeleteCategoryResponse DeleteCategory(int categoryId)
+        {
+            var response = _httpClient.DeleteAsync(UrlAddresses.DeleteCategoryListAddress + categoryId).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return new DeleteCategoryResponse() { Status = true };
+            }
+            else
+            {
+                var msg = ("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase).ToString();
+                return new DeleteCategoryResponse() { Status = false, StatusMsg = msg };
             }
         }
 

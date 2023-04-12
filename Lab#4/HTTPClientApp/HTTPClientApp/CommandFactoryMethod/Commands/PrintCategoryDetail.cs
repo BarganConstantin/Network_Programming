@@ -40,7 +40,7 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
             {
                 if (category.name.ToLower().Contains(categoryName.ToLower()))
                 {
-                    ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n", ConsoleColor.DarkGreen);
+                    ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n\n", ConsoleColor.DarkGreen);
                     categoryFound = true;
                 }
             }
