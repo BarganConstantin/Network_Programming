@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTTPClientApp", "HTTPClientApp\HTTPClientApp.csproj", "{F3FF216F-B589-4529-B043-7DA6823112EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "..\..\PR lab 3\Network_Programming\Lab#3\DNSClientApp\Helpers\Helpers.csproj", "{A38AB381-8E1C-416C-9053-7884F731ED01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3FF216F-B589-4529-B043-7DA6823112EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FF216F-B589-4529-B043-7DA6823112EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FF216F-B589-4529-B043-7DA6823112EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FF216F-B589-4529-B043-7DA6823112EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38AB381-8E1C-416C-9053-7884F731ED01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38AB381-8E1C-416C-9053-7884F731ED01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38AB381-8E1C-416C-9053-7884F731ED01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38AB381-8E1C-416C-9053-7884F731ED01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F36CD89A-AC30-4E52-8432-6CC640D2BC62}
+	EndGlobalSection
+EndGlobal
