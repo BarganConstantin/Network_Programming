@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,9 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
     {
         public void Execute()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            ConsoleUtils.PrintWithColour("Closing DNS Application ...", ConsoleColor.Magenta);
+            Environment.Exit(0);
         }
     }
 }
