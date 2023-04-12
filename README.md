@@ -36,11 +36,11 @@ In this lab, I built a simple DNS client application using DNSClient.NET library
 
 ## Lab 5: [To be updated]🔄
 
-[To be updated after completion of Lab 4]
+[To be updated after completion of Lab 5]
 
 ## Lab 6: [To be updated]🔄
 
-[To be updated after completion of Lab 4]
+[To be updated after completion of Lab 6]
 
 ## Getting Started 🚀
 
