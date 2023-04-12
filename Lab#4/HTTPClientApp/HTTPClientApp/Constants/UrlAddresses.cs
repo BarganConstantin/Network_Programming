@@ -11,5 +11,6 @@ namespace HTTPClientApp.Constants
     {
         public static string BaseAddress = "http://localhost:5000";
         public static string GetCategoryListAddress = "/api/Category/categories";
+        public static string PostCategoryListAddress = "/api/Category/categories";
     }
 }
