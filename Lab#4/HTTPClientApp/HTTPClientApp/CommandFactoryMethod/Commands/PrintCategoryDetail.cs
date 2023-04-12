@@ -1,4 +1,5 @@
 ﻿using Helpers;
+using HTTPClientApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,16 +20,7 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
                 ConsoleUtils.PrintWithColour("View Category Details\nCategory name: ", ConsoleColor.DarkBlue);
                 var categoryName = Console.ReadLine();
 
-                bool categoryFound = false;
- 
-                foreach (var category in response.Categories)
-                {
-                    if (category.name.ToLower().Contains(categoryName.ToLower()))
-                    {
-                        ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n", ConsoleColor.DarkGreen);
-                        categoryFound = true;
-                    }
-                }
+                bool categoryFound = printCategoryDetails(response.Categories, categoryName);
 
                 if (!categoryFound) ConsoleUtils.PrintWithColour("Category not found!", ConsoleColor.DarkRed);
             }
@@ -39,6 +31,20 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
 
             Console.ReadKey();
             Console.Clear();
+        }
+
+        private bool printCategoryDetails(List<Category> categories, string categoryName)
+        {
+            bool categoryFound = false;
+            foreach (var category in categories)
+            {
+                if (category.name.ToLower().Contains(categoryName.ToLower()))
+                {
+                    ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n", ConsoleColor.DarkGreen);
+                    categoryFound = true;
+                }
+            }
+            return categoryFound;
         }
     }
 }
