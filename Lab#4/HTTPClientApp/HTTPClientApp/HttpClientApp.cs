@@ -11,14 +11,8 @@ namespace HTTPClientApp
 {
     public class HttpClientApp
     {
-        private readonly HttpClientService _httpClientApp;
-        private readonly Dictionary<string, Action> _actionMap;
-
         public HttpClientApp() 
         {
-            HttpClient client = new HttpClient();
-            Uri baseUrlAddress = new Uri(Constants.baseUrlAddress);
-            _httpClientApp = new HttpClientService(client, baseUrlAddress);
         }
 
         public void Run()
