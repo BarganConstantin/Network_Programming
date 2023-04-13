@@ -1,6 +1,7 @@
 ﻿using HTTPClientApp.Constants;
 using HTTPClientApp.Entities;
 using HTTPClientApp.ResponseModels;
+using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,6 +88,40 @@ namespace HTTPClientApp
                 return new PutCategoryResponse() { Status = false, StatusMsg = msg };
             }
         }
+
+        public static GetProductsResponse GetProducts(int categoryId)
+        {
+            HttpResponseMessage response = _httpClient.GetAsync(UrlAddresses.ProductsByCategoryId(categoryId.ToString())).Result;
+            Task<string> responseBody;
+
+            if (response.IsSuccessStatusCode)
+            {
+                responseBody = getResponseBodyAsync(response);
+                var products = JsonSerializer.Deserialize<List<Product>>(responseBody.Result);
+                return new GetProductsResponse() { Status = true, Products = products };
+            }
+            else
+            {
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return new GetProductsResponse() { Status = false, StatusMsg = msg };
+            }
+        }
+
+        public static PostProductResponse PostProduct(NewProduct newProduct)
+        {
+            var response = _httpClient.PostAsJsonAsync(UrlAddresses.ProductsByCategoryId(newProduct.categoryId.ToString()), newProduct).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return new PostProductResponse() { Status = true };
+            }
+            else
+            {
+                var msg = string.Format("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return new PostProductResponse() { Status = false, StatusMsg = msg };
+            }
+        }
+
         private static async Task<string> getResponseBodyAsync(HttpResponseMessage response)
         {
             string responseBody = await response.Content.ReadAsStringAsync();

@@ -14,5 +14,11 @@ namespace HTTPClientApp.Constants
         public static string PostCategoryListAddress = "/api/Category/categories";
         public static string DeleteCategoryListAddress = "/api/Category/categories/";
         public static string PutCategoryListAddress = "/api/Category/";
+
+
+        public static string ProductsByCategoryId(string categoryId)
+        {
+            return string.Format("/api/Category/categories/" + categoryId + "/products");
+        }
     }
 }
