@@ -14,12 +14,10 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
 
             if (response.Status)
             {
-                ConsoleUtils.PrintWithColour("View Category Details\nCategory name: ", ConsoleColor.DarkBlue);
+                ConsoleUtils.PrintWithColour("Category name: ", ConsoleColor.DarkBlue);
                 var categoryName = Console.ReadLine();
 
-                bool categoryFound = printCategoryDetails(response.Categories, categoryName);
-
-                if (!categoryFound) ConsoleUtils.PrintWithColour("Category not found!", ConsoleColor.DarkRed);
+                printCategoryDetails(response.Categories, categoryName);
             }
             else
             {
@@ -30,18 +28,25 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
             Console.Clear();
         }
 
-        private bool printCategoryDetails(List<Category> categories, string categoryName)
+        private void printCategoryDetails(List<Category> categories, string categoryName)
         {
+            Console.Clear();
+            ConsoleUtils.PrintOnCenterWithColour("Category Details", ConsoleColor.White, ConsoleColor.Green);
+            Console.WriteLine();
+
             bool categoryFound = false;
             foreach (var category in categories)
             {
                 if (category.name.ToLower().Contains(categoryName.ToLower()))
                 {
-                    ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n\n", ConsoleColor.DarkGreen);
+                    ConsoleUtils.PrintWithColour($" Id: {category.id} \n Name: {category.name} \n ItemsCount: {category.itemsCount}\n\n", ConsoleColor.DarkBlue);
                     categoryFound = true;
                 }
             }
-            return categoryFound;
+            if (!categoryFound) ConsoleUtils.PrintOnCenterWithColour("Category not found!\n", ConsoleColor.DarkRed, ConsoleColor.Black);
+
+            ConsoleUtils.PrintEmptyColourLine(ConsoleColor.White, ConsoleColor.Green);
+            ConsoleUtils.PrintWithColour("\n Press any key to continue ... ", ConsoleColor.White);
         }
     }
 }

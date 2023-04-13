@@ -36,7 +36,7 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
             var productName = Console.ReadLine();
             ConsoleUtils.PrintWithColour("Price: ", ConsoleColor.DarkBlue);
             var productPrice = Console.ReadLine();
-            ConsoleUtils.PrintWithColour("Product category ID: : ", ConsoleColor.DarkBlue);
+            ConsoleUtils.PrintWithColour("Product category ID: ", ConsoleColor.DarkBlue);
             var categoryId = Console.ReadLine();
 
             var newProduct = new NewProduct()
