@@ -30,9 +30,9 @@ In this lab, I built a simple DNS client application using DNSClient.NET library
 - `resolve <ip>`: Displays the list of domain names assigned to the IP address 🔍
 - `set dns <ip>`: Changes the DNS server that will be used for the above commands to the specified IP address ⚙️
 
-## Lab 4: [To be updated]🔄
+## Lab 4: HTTP Client Console Application in C# [To be updated] [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%234)
 
-[To be updated after completion of Lab 4]
+In this lab, I built a simple HTTP client console application in C# that performs CRUD (Create📝, Read📖, Update📈, Delete❌) operations on categories and products via HTTP requests. It includes methods for enumerating categories📊, retrieving category details🔍, creating new categories🆕, deleting categories🗑️, updating category titles✏️, creating new products in categories🛍️, and retrieving products in categories🔎.
 
 ## Lab 5: [To be updated]🔄
 
