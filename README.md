@@ -30,7 +30,7 @@ In this lab, I built a simple DNS client application using DNSClient.NET library
 - `resolve <ip>`: Displays the list of domain names assigned to the IP address 🔍
 - `set dns <ip>`: Changes the DNS server that will be used for the above commands to the specified IP address ⚙️
 
-## Lab 4: HTTP Client Console Application in C# [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%234)
+## Lab 4: HTTP Client Application [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%234)
 
 In this lab, I built a simple HTTP client console application in C# with following features: 
 
