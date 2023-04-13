@@ -1,9 +1,7 @@
-﻿using HTTPClientApp.Entities;
+﻿using Helpers;
+using HTTPClientApp.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HTTPClientApp.CommandFactoryMethod.Commands
 {
@@ -31,11 +29,15 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
         {
             if (Categories.Count > 0)
             {
-                Console.WriteLine("Available Category:");
+                ConsoleUtils.PrintOnCenterWithColour("Available Category", ConsoleColor.White, ConsoleColor.Green);
+                Console.WriteLine();
                 foreach (var category in Categories)
                 {
-                    Console.WriteLine($" - {category.name}");
+                    ConsoleUtils.PrintWithColour($" - {category.name}\n", ConsoleColor.DarkBlue);
                 }
+                Console.WriteLine();
+                ConsoleUtils.PrintEmptyColourLine(ConsoleColor.White, ConsoleColor.Green);
+                ConsoleUtils.PrintWithColour("\n Press any key to continue ... ", ConsoleColor.White);
             }
             else
             {

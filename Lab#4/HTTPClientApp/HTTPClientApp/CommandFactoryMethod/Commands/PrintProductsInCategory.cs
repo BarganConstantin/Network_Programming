@@ -35,7 +35,7 @@ namespace HTTPClientApp.CommandFactoryMethod.Commands
         {
             if (products.Count < 1)
             {
-                ConsoleUtils.PrintWithColour("Category is empty!", ConsoleColor.DarkMagenta);
+                ConsoleUtils.PrintWithColour("Category is empty!\n", ConsoleColor.DarkMagenta);
             }
             else
             {

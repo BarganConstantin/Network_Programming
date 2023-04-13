@@ -21,5 +21,29 @@ namespace Helpers
             Console.Write(text);
             Console.ResetColor();
         }
+
+        public static void PrintOnCenterWithColour(string text, ConsoleColor foreground, ConsoleColor background)
+        {
+            const int width = 44;
+
+            int spaceLen = (width - text.Length) / 2;
+
+            StringBuilder space = new StringBuilder();
+
+            for (int i = 0; i < spaceLen; i++) 
+            {
+                space.Append(' '); 
+            }
+
+            Console.ForegroundColor = foreground;
+            Console.BackgroundColor = background;
+            Console.Write(space + text + space + "\n");
+            Console.ResetColor();
+        }
+
+        public static void PrintEmptyColourLine(ConsoleColor foreground, ConsoleColor background)
+        {
+            PrintOnCenterWithColour("                                            ", foreground, background);
+        }
     }
 }
