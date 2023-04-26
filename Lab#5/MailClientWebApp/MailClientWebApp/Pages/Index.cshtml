@@ -1,0 +1,274 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container pb-mail-template1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <nav class="navbar navbar-default pb-mail-navbar">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" id="brand" href="#">Hello, <u>Obama!</u></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-2" id="column-resize">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <button id="btn_email" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                            New E-mail
+                        </button>
+                        <div id="treeview">
+
+                        </div>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <div class="col-md-10">
+                    <div class="row" id="row_style">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-4 col-md-4">
+                                        <p id="inbox_parag">INBOX</p>
+                                    </div>
+                                    <div class="col-xs-8 col-md-8">
+                                        <div class="input-group">
+                                            <input type="text" name="" placeholder="Seach...." class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary" type="button" tabindex="-1">
+                                                    <span class="fa fa-question fa-2x" area-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-9 col-md-10">
+                                        <div class="btn-group">
+                                            
+                                            <a href="#" class="btn btn-warning">
+                                                <i class=" fa fa-refresh fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a data-toggle="dropdown" href="#" class="btn btn-warning btn-md" aria-expanded="false">
+                                                More
+                                                <i class="fa fa-angle-down "></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Mark all as read</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-2">
+
+                                        <div class="btn-group pull-right">
+                                            <a data-toggle="dropdown" href="#" class="btn btn-primary" aria-expanded="false">
+                                                <i class="fa fa-cog"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Comfortable</a></li>
+                                                <li><a href="#">Cozy</a></li>
+                                                <li><a href="#">Compact</a></li>
+                                                <hr>
+                                                <li><a href="#">Configure inbox</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="grid" role="grid" aria-readonly="true" class="sui-grid sui-grid-core">
+                                    <table class="sui-table sui-non-selectable">
+                                        <colgroup>
+                                            <col style="width:2em">
+                                            <col style="width:17em">
+                                            <col style="width:2em">
+                                            <col style="width:6em">
+                                        </colgroup>
+                                        <thead>
+                                            <tr role="row" class="sui-columnheader">
+                                                <th data-field="icon" role="columnheader" tabindex="-1" class="sui-headercell">
+                                                    <a href="#" class="sui-link sui-unselectable" unselectable="on" tabindex="-1">&nbsp;</a>
+                                                </th>
+                                                <th data-field="message" role="columnheader" tabindex="-1" class="sui-headercell">
+                                                    <a href="#" class="sui-link sui-unselectable" unselectable="on" tabindex="-1">Subject</a>
+                                                </th>
+                                                <th data-field="attach" role="columnheader" tabindex="-1" class="sui-headercell">
+                                                    <a href="#" class="sui-link sui-unselectable" unselectable="on" tabindex="-1">&nbsp;</a>
+                                                </th>
+                                                <th data-field="date" role="columnheader" tabindex="-1" class="sui-headercell">
+                                                    <a href="#" class="sui-link sui-unselectable" unselectable="on" tabindex="-1">Delivered</a>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sui-hide">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sui-gridheader"></div>
+                                    <div class="sui-gridcontent">
+                                        <table class="sui-table sui-hover sui-selectable">
+                                            <colgroup>
+                                                <col style="width:2em">
+                                                <col style="width:17em">
+                                                <col style="width:2em">
+                                                <col style="width:6em">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr class="sui-row" role="row">
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"><span class="fa fa-envelope"></span></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">Class starting</td>
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"><span class="fa fa-paperclip"></span></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">9:27 AM</td>
+                                                </tr>
+                                                <tr class="sui-alt-row" role="row">
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"><span class="fa fa-envelope-open"></span></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">Sign up today for Lorem!</td>
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">13:12 PM</td>
+                                                </tr>
+                                                <tr class="sui-row" role="row">
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"><span class="fa fa-envelope-open"></span></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">You have new like on your picture!</td>
+                                                    <td style="text-align: center;" role="gridcell" tabindex="-1" class="sui-cell"></td>
+                                                    <td role="gridcell" tabindex="-1" class="sui-cell">7:09 AM</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="sui-pager sui-pager-core">
+                                        <ul class="sui-pagination">
+                                            <li class="sui-pager-element sui-disabled"><a title="Go to the first page" data-page="1" class="sui-first">«</a></li>
+                                            <li class="sui-pager-element sui-disabled"><a title="Go to the previous page" data-page="0" class="sui-prev">‹</a></li>
+                                            <li class="sui-pager-element"><a data-page="1" class="sui-pager-number sui-selected">1</a></li>
+                                            <li class="sui-pager-element sui-disabled"><a title="Go to the next page" data-page="2" class="sui-next">›</a></li>
+                                            <li class="sui-pager-element sui-disabled"><a title="Go to the last page" data-page="1" class="sui-last">»</a></li>
+                                        </ul>
+                                        <div class="sui-pager-info-box">1 - 5 of 5 items</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal view -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>New message</h5>
+                                </div>
+                                <div class="col-md-8">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group row">
+                                    <div class="col-md-3">
+                                        <p>To: </p>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="search" placeholder="Enter e-mail" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3">
+                                        <p>Subject: </p>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="search" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3">
+                                        <p>Message: </p>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary pull-left" id="btn_file">
+                                <span class="fa fa-paperclip fa-2x"></span>
+                                <input type="file" id="file" style="display: none;" />
+                            </button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of modal -->
+
+        </div>
+    </div>
+</div>
+
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#treeview").shieldTreeView({
+            dataSource: dataSrc
+        });
+
+        $("#grid").shieldGrid({
+            dataSource: {
+                data: gridData
+            },
+            sorting: {
+                multiple: true
+            },
+            paging: {
+                pageSize: 12,
+                pageLinksCount: 10
+            },
+            selection: {
+                type: "row",
+                multiple: true,
+                toggle: false
+            },
+            columns: [
+                { field: "check", title: "&nbsp;", width: "2em", attributes: { style: "text-align: center;" } },
+                { field: "icon", title: "&nbsp;", width: "2em", attributes: { style: "text-align: center;" } },
+                { field: "message", title: "Subject", width: "17em" },
+                { field: "attach", title: "&nbsp;", width: "2em", attributes: { style: "text-align: center;" } },
+                { field: "date", title: "Delivered", width: "6em" }
+            ]
+        });
+    })
+</script>
+<!-- E-mail Client - END -->

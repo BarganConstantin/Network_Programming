@@ -23,7 +23,15 @@ namespace HTTPClientApp
                 var option = Console.ReadLine();
 
                 ICommand command = CommandFactory.GetCommand(option);
-                command.Execute();
+
+                try
+                {
+                    command.Execute();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }
