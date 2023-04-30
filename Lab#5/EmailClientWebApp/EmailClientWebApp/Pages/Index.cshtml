@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body {
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
+</style>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="row d-flex justify-content-between align-items-center vh-100">
+            <div class="wrap" style="z-index:1000">
+                <button class="button-int" onclick="location.href='@Url.Page("PopThree")'">POP3</button>
+            </div>
+            <div class="wrap" style="z-index:1000">
+                <button class="button-int" onclick="location.href='@Url.Page("Imap")'">IMAP</button>
+            </div>
+            <div class="wrap" style="z-index:1000">
+                <button class="button-int" onclick="location.href='@Url.Page("SendMsg")'">Sent Message</button>
+            </div>
+            <div class="wrap" style="position: absolute; display: flex; justify-content:flex-end; align-items:flex-start;width: 86%; margin-top: 35px;">
+                <button type="submit" class="btn btn-secondary" onclick="location.href='@Url.Page("Logout")'">Logout</button>
+            </div>
+        </div>
+    </main>
+    
+</div>
+
+
+

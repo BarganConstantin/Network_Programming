@@ -1,0 +1,91 @@
+﻿@page
+@model EmailClientWebApp.Pages.ImapModel
+@{
+}
+
+
+
+<style>
+    .clicked-row {
+        background-color: lightblue;
+    }
+
+        .clicked-row:hover {
+            background-color: lightblue;
+        }
+
+    html, body {
+        height: 100%;
+        background-color: none;
+        background-image: none;
+    }
+</style>
+
+<div class="container">
+    <div class="text-center" style="margin-top:30px; margin-bottom:25px;">
+        <h1>Email list using IMAP</h1>
+    </div>
+    <div class="col-12 table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">From</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Attachments</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Headers.Count; i++)
+                {
+                    var header = Model.Headers[i];
+                    <tr onclick="location.href='@Url.Page("ImapMessage", new { id = header.Id })'">
+                        <th scope="row" class="align-middle">@header.Id</th>
+                        <td class="align-middle">@header.Title</td>
+                        <td class="align-middle">@header.From</td>
+                        <td class="align-middle">@header.Date</td>
+                        <td class="align-middle">@header.HasAttachments</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row d-flex justify-content-center" style="margin-top: 20px;">
+        <div class="col-3 d-flex justify-content-lg-end">
+            @if (Model.MsgNumber > 10)
+            {
+                <form method="get" style="width:100%">
+                    @{
+                        int a = @Model.MsgNumber - 10;
+                    }
+                    <input type="hidden" name="msgNumber" value="@a" />
+                    <button class="col-6 btn btn-primary">Previous</button>
+                </form>
+            }
+            else
+            {
+                <button class="col-6 btn btn-primary" disabled>Previous</button>
+            }
+
+        </div>
+        <div class="col-3 d-flex justify-content-lg-start">
+            <form method="get" style="width:100%">
+                @{
+                    int a = @Model.MsgNumber + 10;
+                }
+                <input type="hidden" name="msgNumber" value="@a" />
+                <button class="col-6 btn btn-primary">Next</button>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+    </div>
+
+</div>
+
+<script>
+    function addClickedClass(element) {
+        element.classList.add('clicked-row');
+    }
+</script>

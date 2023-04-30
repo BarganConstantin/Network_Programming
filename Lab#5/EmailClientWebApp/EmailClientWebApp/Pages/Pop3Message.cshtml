@@ -1,0 +1,46 @@
+﻿@page
+@using MimeKit;
+@model EmailClientWebApp.Pages.MessageModel
+@{
+}
+
+<div class="vh-100 d-flex align-items-center bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto p-4 border rounded bg-white">
+                <h2 class="text-center mb-4">@Model.Msg.Title</h2>
+                <p class="mb-1"><strong>From:</strong> @Model.Msg.From</p>
+                <p class="mb-1"><strong>Date:</strong> @Model.Msg.Date</p>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <p style="word-wrap: break-word;">@Model.Msg.Body</p>
+                </div>
+                @if (Model.Msg.Attachments != null && Model.Msg.Attachments.Count > 0)
+                {
+                    <hr>
+                    <h3 class="text-center mb-3">Attachments:</h3>
+                    <ul class="list-unstyled">
+                        @foreach (var attachment in Model.Msg.Attachments)
+                        {
+                            var mimePart = attachment as MimePart;
+                            if (mimePart != null)
+                            {
+                                <li class="pt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>@mimePart.FileName</span>
+                                        <form method="post" asp-page-handler="Download" asp-route-msgId="@Model.Msg.Id" asp-route-attachId="@mimePart.ContentId">
+                                            <button class="btn btn-sm btn-primary" type="submit">Download</button>
+                                        </form>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+                }
+                <div class="text-center mt-4">
+                    <button class="btn btn-lg btn-secondary" onclick="history.back()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
