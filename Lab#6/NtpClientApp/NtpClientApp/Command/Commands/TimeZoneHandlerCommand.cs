@@ -9,18 +9,35 @@ namespace NtpClientApp.Command.Commands
     {
         public void Execute()
         {
-            Console.Clear();
-            ConsoleUtils.PrintOnCenterWithColour("Time & Date by Time Zone", ConsoleColor.White, ConsoleColor.DarkGreen);
-            ConsoleUtils.PrintWithColour("\n Enter the time zone \n in GMT+X or GMT-X format: ", ConsoleColor.White);
-            string input = Console.ReadLine();
+            int offset = getOffSet();
 
-            Match match = Regex.Match(input, @"GMT(\+|\-)\d{1,2}");
-            if (!match.Success)
+            DateTime localTime = getTimeByOffSet(offset);
+
+            printLocalDateTimeResult(localTime);
+        }
+
+        private int getOffSet()
+        {
+            Match match;
+
+            while (true)
             {
-                ConsoleUtils.PrintWithColour("\nThe format is not valid!\n", ConsoleColor.Red);
-                Console.WriteLine("\nPress any key to continue ...");
-                Console.ReadKey();
-                return;
+                Console.Clear();
+                ConsoleUtils.PrintOnCenterWithColour("Time & Date by Time Zone", ConsoleColor.White, ConsoleColor.DarkGreen);
+                ConsoleUtils.PrintWithColour("\n Enter the time zone \n in GMT+X or GMT-X format: ", ConsoleColor.White);
+                string input = Console.ReadLine();
+
+                match = Regex.Match(input, @"GMT(\+|\-)\d{1,2}");
+                if (!match.Success)
+                {
+                    ConsoleUtils.PrintWithColour("\nThe format is not valid!\n", ConsoleColor.Red);
+                    Console.WriteLine("\nPress any key to continue ...");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    break;
+                }
             }
 
             Console.WriteLine();
@@ -34,16 +51,31 @@ namespace NtpClientApp.Command.Commands
                 offset = -offset;
             }
 
+            return offset;
+        }
+
+        private DateTime getTimeByOffSet(int offset)
+        {
             TimeSpan diff = TimeSpan.FromHours(offset);
 
             // Get the current time from an NTP server
-            var connection = new NtpConnection("pool.ntp.org");
-            DateTime ntpDateTime = connection.GetUtc();
+            DateTime ntpDateTime = getDateTimeFromNtpServer();
 
             // Add the offset to the UTC time to get the needed time
             DateTime localTime = ntpDateTime.Add(diff);
 
+            return localTime;
+        }
 
+        private DateTime getDateTimeFromNtpServer()
+        {
+            var connection = new NtpConnection("pool.ntp.org");
+            DateTime ntpDateTime = connection.GetUtc();
+            return ntpDateTime;
+        }
+
+        private void printLocalDateTimeResult(DateTime localTime)
+        {
             ConsoleUtils.PrintWithColour(string.Format("\n The current time and date in the specified\n area is: "), ConsoleColor.DarkBlue);
             ConsoleUtils.PrintWithColour(string.Format(localTime.ToString("dd/MM/yyyy HH:mm:ss")), ConsoleColor.White);
 
