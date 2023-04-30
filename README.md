@@ -49,9 +49,12 @@ In this lab, I built a simple Email Client Web Application in C# with following 
 - Send an email with text using the SMTP protocol 📨
 - Send an email with an attachment using the SMTP protocol 📎
 
-## Lab 6: [To be updated]🔄
+## Lab 6: NTP Client Console App [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%236)
+In this lab, I built a simple NTP Client Console Application in C# with following features: 
 
-[To be updated after completion of Lab 6]
+- Prompt the user to enter a geographic zone in "GMT+X" or "GMT-X" format 🌍
+- Fetch the time from NTP servers using the NTP protocol 🕰️
+- Display the exact time for the specified geographic zone ⏰
 
 ## Getting Started 🚀
 
