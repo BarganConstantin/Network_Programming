@@ -40,9 +40,14 @@ In this lab, I built a simple HTTP client console application in C# with followi
 - Simple and intuitive: The console application is designed to be easy to understand and use, with clear prompts and instructions for performing operations.
 - HTTP client: The application uses the HttpClient class in C# to send HTTP requests and receive responses, making it a practical example of using HTTP client in a real-world scenario.
 
-## Lab 5: [To be updated]🔄
+## Lab 5: Email Client Web Application in C# [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%235)
+In this lab, I built a simple Email Client Web Application in C# with following features: 
 
-[To be updated after completion of Lab 5]
+- Show the list of emails from the mailbox using the POP3 protocol 📋
+- Show the list of emails from the mailbox using the IMAP protocol 📋
+- Download an email with attachments using the POP3 and IMAP protocol 📩
+- Send an email with text using the SMTP protocol 📤
+- Send an email with an attachment using the SMTP protocol 📤📎
 
 ## Lab 6: [To be updated]🔄
 
