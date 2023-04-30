@@ -43,11 +43,11 @@ In this lab, I built a simple HTTP client console application in C# with followi
 ## Lab 5: Email Client Web Application in C# [🔗](https://github.com/BarganConstantin/Network_Programming/tree/main/Lab%235)
 In this lab, I built a simple Email Client Web Application in C# with following features: 
 
-- Show the list of emails from the mailbox using the POP3 protocol 📋
-- Show the list of emails from the mailbox using the IMAP protocol 📋
-- Download an email with attachments using the POP3 and IMAP protocol 📩
-- Send an email with text using the SMTP protocol 📤
-- Send an email with an attachment using the SMTP protocol 📤📎
+- Show the list of emails from the mailbox using the POP3 protocol 📩
+- Show the list of emails from the mailbox using the IMAP protocol 📬
+- Download an email with attachments using the POP3 and IMAP protocol 📤
+- Send an email with text using the SMTP protocol 📨
+- Send an email with an attachment using the SMTP protocol 📎
 
 ## Lab 6: [To be updated]🔄
 
