@@ -1,6 +1,7 @@
 ﻿using Helpers;
 using System;
 using System.Text.RegularExpressions;
+using NtpClient;
 
 namespace NtpClientApp.Command.Commands
 {
@@ -33,14 +34,19 @@ namespace NtpClientApp.Command.Commands
                 offset = -offset;
             }
 
-            // Create a custom time zone object with the specified offset from UTC
-            TimeZoneInfo timeZone = TimeZoneInfo.CreateCustomTimeZone("Custom Time Zone", new TimeSpan(offset, 0, 0), "Custom Time Zone", "Custom Time Zone");
+            TimeSpan diff = TimeSpan.FromHours(offset);
 
-            // Convert date time to particular time zone
-            DateTimeOffset currentDateTime = TimeZoneInfo.ConvertTime(DateTimeOffset.Now, timeZone);
+            // Get the current time from an NTP server
+            var connection = new NtpConnection("pool.ntp.org");
+            DateTime ntpDateTime = connection.GetUtc();
+
+            // Add the offset to the UTC time to get the needed time
+            DateTime localTime = ntpDateTime.Add(diff);
+
+
             ConsoleUtils.PrintWithColour(string.Format("\n The current time and date in the specified\n area is: "), ConsoleColor.DarkBlue);
-            ConsoleUtils.PrintWithColour(string.Format(currentDateTime.ToString("dd/MM/yyyy HH:mm:ss")), ConsoleColor.White);
-            
+            ConsoleUtils.PrintWithColour(string.Format(localTime.ToString("dd/MM/yyyy HH:mm:ss")), ConsoleColor.White);
+
             Console.WriteLine("\n");
             ConsoleUtils.PrintEmptyColourLine(ConsoleColor.DarkGreen, ConsoleColor.DarkGreen);
 
