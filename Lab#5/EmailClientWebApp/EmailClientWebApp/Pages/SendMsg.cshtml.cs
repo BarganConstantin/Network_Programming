@@ -36,7 +36,7 @@ namespace EmailClientWebApp.Pages
                 return RedirectToPage("/Error");
             }
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/EmailSent");
         }
     }
 }

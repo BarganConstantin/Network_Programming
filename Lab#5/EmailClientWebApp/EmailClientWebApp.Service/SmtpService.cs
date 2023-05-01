@@ -14,6 +14,13 @@ namespace EmailClientWebApp.Service
     {
         public void sendNewEmail(string username, string password, string to, string subject, string message, List<IFormFile> attachment)
         {
+            var msg = createEmail(username, to, subject, message, attachment);
+
+            sendEmail(username, password, msg);
+        }
+
+        private MimeMessage createEmail(string username, string to, string subject, string message, List<IFormFile> attachment)
+        {
             var msg = new MimeMessage();
             msg.From.Add(new MailboxAddress(username, username));
             msg.To.Add(new MailboxAddress(to, to));
@@ -41,9 +48,14 @@ namespace EmailClientWebApp.Service
 
             msg.Body = builder.ToMessageBody();
 
+            return msg;
+        }
+
+        private void sendEmail(string username, string password, MimeMessage msg)
+        {
             using (var client = new SmtpClient())
             {
-                client.Connect("smtp.mail.ru", 465, true);
+                client.Connect(Constants.SmtpUrl, Constants.SmtpPort, true);
 
                 client.Authenticate(username, password);
 

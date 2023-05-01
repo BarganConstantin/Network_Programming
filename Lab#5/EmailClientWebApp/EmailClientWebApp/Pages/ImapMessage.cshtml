@@ -26,7 +26,7 @@
                             var mimePart = attachment as MimePart;
                             if (mimePart != null)
                             {
-                                <li class="border-top pt-3">
+                                <li class="pt-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span>@mimePart.FileName</span>
                                         <form method="post" asp-page-handler="Download" asp-route-msgId="@Model.Msg.Id" asp-route-attachId="@mimePart.ContentId">
