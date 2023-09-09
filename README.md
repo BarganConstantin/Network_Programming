@@ -67,5 +67,3 @@ Feel free to contribute to this repository by submitting pull requests or creati
 ## License 📝
 
 This repository is licensed under the MIT License - see the [MIT License](https://opensource.org/licenses/MIT) file for details.
-
-You can modify this template to add more details, such as instructions for running the code, how to contribute, and any other relevant information for your course. Good luck with your labs!
